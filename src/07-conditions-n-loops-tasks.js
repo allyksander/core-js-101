@@ -302,21 +302,8 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(ccn) {
-  const numberArray = String(ccn).split('');
-  const controlNumber = parseInt(numberArray.pop(), 0);
-
-  const sumArray = numberArray.reverse().map((item, index) => {
-    if (index % 2 === 0) {
-      return String(item * 2).split('').map((itemInner) => parseInt(itemInner, 0)).reduce((prev, cur) => prev + cur);
-    }
-    return parseInt(item, 0);
-  });
-
-  const result = String(sumArray.reduce((prev, cur) => prev + cur))
-    .split('').map((itemInner) => parseInt(itemInner, 0)).reduce((prev, cur) => prev + cur);
-
-  return result % 10 === controlNumber;
+function isCreditCardNumber(/* ccn */) {
+  throw new Error('Not implemented');
 }
 
 /**
